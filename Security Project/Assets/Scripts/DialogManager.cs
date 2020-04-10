@@ -19,7 +19,16 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+       
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
         dialogText.text = dialogLines[currentLine];
     }
 
@@ -28,7 +37,7 @@ public class DialogManager : MonoBehaviour
     {
         if(dialogBox.activeInHierarchy)
         {
-            if(Input.GetButtonUp("Fire1"))
+            if(Input.GetKeyUp("space"))
             {
 
                 if(!justStartered)

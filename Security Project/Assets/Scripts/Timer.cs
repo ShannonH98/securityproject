@@ -5,28 +5,40 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    Image timerBar;
+    public Image timerBar;
     public float maxTime = 5f;
     float timeLeft;
 
+    public static Timer instance;
+
     private void Start()
     {
+        instance = this;
+
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
     }
 
     private void Update()
     {
-        if(timeLeft > 0)
+        GameOver();
+        if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            timerBar
-                .fillAmount = timeLeft / maxTime;
+            timerBar.fillAmount = timeLeft / maxTime;
         }
         else
         {
             Time.timeScale = 0;
         }
     }
+
+    void GameOver()
+    {
+        if (timerBar.fillAmount == 0)
+        {
+            //Debug.Log("Times up");
+        }
+    }
 }
-//trigger this function after first instructions played
+//trigger this function after first instructions played?

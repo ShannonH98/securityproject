@@ -17,7 +17,7 @@ public class DialogActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canActivate && Input.GetButtonDown("Fire1") && !DialogManager.instance.dialogBox.activeInHierarchy) //Maybe trigger of player walks into area. to help
+        if(canActivate && Input.GetKeyDown("space") && !DialogManager.instance.dialogBox.activeInHierarchy) //Maybe trigger of player walks into area. to help
         {
             PlayerController.instance.canMove = false;
             DialogManager.instance.ShowDialog(lines);

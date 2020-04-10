@@ -13,9 +13,22 @@ public class CameraController : MonoBehaviour
 
     private float halfHeight;
     private float halfWidth;
+
+    public static CameraController instance;
     // Start is called before the first frame update
     void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+
+        
         target = PlayerController.instance.transform;
 
         halfHeight = Camera.main.orthographicSize;
