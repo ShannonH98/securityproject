@@ -104,6 +104,8 @@
     <Compile Include="Assets\Scripts\PinPad.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerLoader.cs" />
+    <Compile Include="Assets\Scripts\StartSkipButton.cs" />
+    <Compile Include="Assets\Scripts\TextScroll.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TitleScreen.cs" />
     <Compile Include="Assets\Scripts\UserInput.cs" />
